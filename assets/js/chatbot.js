@@ -4,7 +4,7 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  const WORKER_URL = '/api/chat';
+  const WORKER_URL = 'https://portfolio-chatbot-worker.hfz-aiman0307.workers.dev';
   let isOpen = false;
   let isTyping = false;
   let messageHistory = [];

@@ -6,6 +6,8 @@ export default {
       return new Response(null, {
         headers: {
           'Allow': 'POST, OPTIONS',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Type',
         },
       });
     }
@@ -36,7 +38,7 @@ export default {
       );
     }
 
-    const apiKey = env.GROQ_API_KEY;
+    const apiKey = env.OPENROUTER_API_KEY;
     if (!apiKey) {
       return new Response(
         JSON.stringify({ error: 'API key not configured' }),
@@ -61,28 +63,31 @@ INSTRUCTIONS:
 
     try {
       const response = await fetch(
-        'https://api.groq.com/openai/v1/chat/completions',
+        'https://openrouter.ai/api/v1/chat/completions',
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${apiKey}`,
+            // Optional but recommended by OpenRouter
+            'HTTP-Referer': 'https://my-portfolio.pages.dev',
+            'X-Title': 'Portfolio Chatbot',
           },
           body: JSON.stringify({
-            model: 'moonshotai/kimi-k2-instruct-0905',
+            model: 'meta-llama/llama-3.1-8b-instruct',
             messages: [
               { role: 'system', content: systemPrompt.trim() },
               { role: 'user', content: message.trim() },
             ],
-            temperature: 0.7,
-            max_tokens: 250,
+            temperature: 0.6,
+            max_tokens: 300,
           }),
         }
       );
 
       if (!response.ok) {
         const err = await response.text();
-        console.error('Groq API error:', response.status, err);
+        console.error('OpenRouter API error:', response.status, err);
         return new Response(
           JSON.stringify({ error: 'AI service error' }),
           { status: 500, headers: { 'Content-Type': 'application/json' } }
@@ -96,7 +101,12 @@ INSTRUCTIONS:
 
       return new Response(
         JSON.stringify({ response: reply }),
-        { headers: { 'Content-Type': 'application/json' } }
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+          },
+        }
       );
 
     } catch (err) {

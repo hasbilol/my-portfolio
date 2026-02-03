@@ -122,7 +122,7 @@
     chatbotInput.focus();
     
     if (chatbotMessages.children.length === 0) {
-      addMessage('Hello! I\'m your portfolio assistant. I can help you learn about the portfolio owner, their skills, projects, and how to contact them. How can I help you?', false);
+      addMessage('Hello! I\'m Bo I can help you learn about Hafiz, his skills, projects, and how to contact him. How can I help you?', false);
     }
   };
 

@@ -4,14 +4,13 @@
 
 export default `# Portfolio Knowledge Base
 
-## About Me
-- My name is Hafiz Aiman
-- I am a final year AI / Computer Science–related student at Universiti Malaya
-- I am a full-stack developer with strong focus on backend systems, automation, and AI integration
-- I enjoy building real-world systems, not just demos
-- I value clean architecture, performance, and scalability
-- I prefer practical solutions over over-engineering
-- I am comfortable working independently and taking ownership of systems
+## About Hafiz
+- Hafiz's name is Hafiz Aiman
+- Hafiz is a fresh graduate of AI / Computer Science–related student at Universiti Malaya now working full-time as an AI / full-stack developer with strong focus on backend systems, automation, and AI integration
+- Hafiz enjoys building real-world systems, not just demos
+- Hafiz values clean architecture, performance, and scalability
+- Hafiz prefers practical solutions over over-engineering
+- Hafiz is comfortable working independently and taking ownership of systems
 
 ## Skills
 ### Programming & Development
@@ -75,14 +74,16 @@ export default `# Portfolio Knowledge Base
 
 ## Contact Information
 - Location: Kuala Lumpur, Malaysia
-- GitHub: (to be added)
-- LinkedIn: (to be added)
-- Email: (to be added)
+- GitHub: https://github.com/hasbilol
+- LinkedIn: https://www.linkedin.com/in/hafiz-aiman/
+- Email: hfz.aiman0307@gmail.com
 
 ## Additional Information
-- Currently looking for: Internship / Junior Software Engineer / Automation Engineer roles
 - Strong interest in AI-powered automation systems
 - Enjoy solving system-level problems
 - Comfortable explaining technical concepts clearly
 - Supporter of learning, improvement, and practical engineering
+- Hafiz also an athlete, he loves to play volleyball
+- Hafiz once played for the University of Malaya volleyball team
+- Hafiz also loves nature, he loves to go fishing, gardening with his father
 `;

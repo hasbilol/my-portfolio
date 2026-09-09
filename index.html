@@ -4,16 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Portfolio of Hafiz Aiman — AI Developer specializing in LLM integrations, RAG, autonomous agents, and production systems." />
-    <title>Portfolio | Hafiz Aiman</title>
+    <title>Hafiz Aiman — AI Developer</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-      <div class="scroll-progress" aria-hidden="true">
-        <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
-      </div>
       <div class="container header-inner">
         <a class="brand" href="#top" aria-label="Go to top">
           <span class="brand-mark" aria-hidden="true">HA</span>
@@ -37,7 +34,7 @@
         </nav>
 
         <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
-          <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -48,7 +45,7 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <svg class="theme-toggle__icon theme-toggle__icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
@@ -56,303 +53,313 @@
     </header>
 
     <main id="main">
+      <!-- ==================== HERO ==================== -->
       <section id="top" class="hero">
         <div class="container hero-inner">
           <div class="hero-copy reveal">
-            <p class="eyebrow">Hi, I’m</p>
+            <div class="status-pill">
+              <span class="status-dot" aria-hidden="true"></span>
+              Available for Full-Time Roles
+            </div>
+
             <h1>Hafiz Aiman</h1>
-            <p class="lead">
-              An <strong><span id="role-rotator">AI Developer</span></strong> building autonomous agents, RAG pipelines, and production-ready systems at scale.
+            <p class="hero-title">AI Developer & Forward Deployed Engineer</p>
+            <p class="hero-desc">
+              Architecting agentic LLM workflows, RAG knowledge systems, and virtualized Linux infrastructure. Bridging client business requirements with production-ready AI systems.
             </p>
 
             <div class="hero-actions">
-              <a class="btn" href="#projects">View Projects</a>
-              <a class="btn btn--ghost" href="#contact">Contact</a>
+              <a class="btn btn--primary" href="#projects">View Projects</a>
+              <a class="btn btn--secondary" href="#contact">Contact Me</a>
             </div>
 
-            <ul class="meta">
-              <li><span class="meta-label">Location:</span> Malaysia</li>
-              <li><span class="meta-label">Email:</span> hfz.aiman0307@gmail.com</li>
-            </ul>
-          </div>
-
-          <div class="hero-card reveal" aria-label="Profile card">
-            <div class="avatar" aria-hidden="true">
-              <img src="assets/images/photo_2026-04-07_20-23-45.jpg" alt="Hafiz Aiman profile photo" class="avatar-img" />
-            </div>
-            <div class="hero-card__body">
-              <p class="hero-card__title">Currently</p>
-              <p class="hero-card__text">AI Developer • Beyond Photography Academy</p>
-              <p class="hero-card__title">Focus</p>
-              <p class="hero-card__text">LLM Systems • RAG • Agentic AI</p>
+            <div class="hero-meta">
+              <span>Location: Kuala Lumpur, MY</span>
+              <span>Email: hfz.aiman0307@gmail.com</span>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="about" class="section">
-        <div class="container">
-          <div class="section-head">
-            <h2>About</h2>
-            <p class="section-subtitle">Who I am and how I work.</p>
-          </div>
-
-          <div class="grid-2">
-            <div class="card reveal">
-              <h3>Who I am</h3>
-              <p>
-                AI Developer and Computer Science (AI) graduate from Universiti Malaya. Specializes in LLM integrations, autonomous agent architectures, RAG, and Linux server virtualization. Experienced in end-to-end production deployment and client-facing technical scoping.
-              </p>
+          <div class="spec-card reveal" aria-label="System specification card">
+            <div class="spec-card__header">
+              <div class="spec-card__dots">
+                <span></span><span></span><span></span>
+              </div>
+              system_spec.json
             </div>
-            <div class="card reveal">
-              <h3>What I do</h3>
-              <p>
-                I architect multi-modal AI agents, build RAG knowledge pipelines, and deploy production systems on Linux infrastructure. I combine strong algorithmic problem-solving with modern context engineering workflows to deliver real-world AI solutions.
-              </p>
+            <div class="spec-card__body">
+              <span class="bracket">{</span><br />
+              &nbsp;&nbsp;<span class="key">"status"</span>: <span class="str">"Ready for deployment"</span>,<br />
+              &nbsp;&nbsp;<span class="key">"role"</span>: <span class="str">"AI Developer & Researcher"</span>,<br />
+              &nbsp;&nbsp;<span class="key">"focus"</span>: [<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="arr-item">"Agentic AI"</span>,<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="arr-item">"Tool Calling"</span>,<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="arr-item">"RAG"</span>,<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;<span class="arr-item">"Proxmox"</span><br />
+              &nbsp;&nbsp;],<br />
+              &nbsp;&nbsp;<span class="key">"education"</span>: <span class="str">"B.CompSc (AI), Universiti Malaya"</span>,<br />
+              &nbsp;&nbsp;<span class="key">"accolade"</span>: <span class="str">"SASMO Math Olympiad Bronze Medalist"</span><br />
+              <span class="bracket">}</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="skills" class="section section--alt">
+      <!-- ==================== SKILLS ==================== -->
+      <section id="skills" class="section">
         <div class="container">
           <div class="section-head">
             <h2>Skills</h2>
-            <p class="section-subtitle">Tools and technologies I use daily.</p>
+            <p class="section-subtitle">Technologies and tools in my stack.</p>
           </div>
 
-          <div class="skills-grid reveal">
-            <div class="skill-category">
-              <h3 class="skill-category__title">AI & LLM Systems</h3>
-              <div class="skill-bar" data-level="90">
-                <div class="skill-bar__label"><span>LLM APIs (OpenAI, DeepSeek, Claude)</span><span class="skill-bar__pct">90%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-              </div>
-              <div class="skill-bar" data-level="85">
-                <div class="skill-bar__label"><span>RAG & Context Engineering</span><span class="skill-bar__pct">85%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-              </div>
-              <div class="skill-bar" data-level="80">
-                <div class="skill-bar__label"><span>Agentic Architectures</span><span class="skill-bar__pct">80%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-              </div>
-              <div class="skill-bar" data-level="75">
-                <div class="skill-bar__label"><span>PyTorch / Computer Vision</span><span class="skill-bar__pct">75%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+          <div class="skills-bento reveal">
+            <div class="skill-card">
+              <h3 class="skill-card__title">AI Systems & LLMs</h3>
+              <div class="tag-row">
+                <span class="tag">OpenAI API</span>
+                <span class="tag">DeepSeek</span>
+                <span class="tag">Claude</span>
+                <span class="tag">Agentic Workflows</span>
+                <span class="tag">Tool/Function Calling</span>
+                <span class="tag">RAG Pipelines</span>
+                <span class="tag">Ollama</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">Prompt Engineering</span>
               </div>
             </div>
 
-            <div class="skill-category">
-              <h3 class="skill-category__title">Full-Stack Development</h3>
-              <div class="skill-bar" data-level="90">
-                <div class="skill-bar__label"><span>Python / Node.js / Express</span><span class="skill-bar__pct">90%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-              </div>
-              <div class="skill-bar" data-level="80">
-                <div class="skill-bar__label"><span>Bootstrap / EJS / HTML5 / CSS3</span><span class="skill-bar__pct">80%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-              </div>
-              <div class="skill-bar" data-level="80">
-                <div class="skill-bar__label"><span>MySQL / MSSQL / PostgreSQL</span><span class="skill-bar__pct">80%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-              </div>
-              <div class="skill-bar" data-level="75">
-                <div class="skill-bar__label"><span>REST API Design</span><span class="skill-bar__pct">75%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+            <div class="skill-card">
+              <h3 class="skill-card__title">Infrastructure & DevOps</h3>
+              <div class="tag-row">
+                <span class="tag">Proxmox VE</span>
+                <span class="tag">LXC Containers</span>
+                <span class="tag">Nginx Reverse Proxy</span>
+                <span class="tag">Ubuntu Server</span>
+                <span class="tag">PM2</span>
+                <span class="tag">systemd</span>
+                <span class="tag">Git</span>
+                <span class="tag">Linux Automation</span>
               </div>
             </div>
 
-            <div class="skill-category">
-              <h3 class="skill-category__title">Infrastructure & DevOps</h3>
-              <div class="skill-bar" data-level="85">
-                <div class="skill-bar__label"><span>Proxmox VE / LXC Containers</span><span class="skill-bar__pct">85%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-              </div>
-              <div class="skill-bar" data-level="80">
-                <div class="skill-bar__label"><span>Nginx / Reverse Proxy / SSL</span><span class="skill-bar__pct">80%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-              </div>
-              <div class="skill-bar" data-level="80">
-                <div class="skill-bar__label"><span>PM2 / systemd / Linux Server</span><span class="skill-bar__pct">80%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-              </div>
-              <div class="skill-bar" data-level="75">
-                <div class="skill-bar__label"><span>Git / SSH / OTA Deployment</span><span class="skill-bar__pct">75%</span></div>
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+            <div class="skill-card">
+              <h3 class="skill-card__title">Backend & Architecture</h3>
+              <div class="tag-row">
+                <span class="tag">Python</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">RESTful APIs</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">MSSQL</span>
+                <span class="tag">Forward Deployed Engineering</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- ==================== PROJECTS ==================== -->
       <section id="projects" class="section">
         <div class="container">
           <div class="section-head">
             <h2>Projects</h2>
-            <p class="section-subtitle">Real systems and academic work.</p>
+            <p class="section-subtitle">Selected work and research.</p>
           </div>
 
-          <div class="grid-3">
-            <article class="card project reveal" role="button" tabindex="0"
-              data-title="Path Planning for Indoor Delivery System"
-              data-desc="Final year project implementing Delaunay triangulation, Dijkstra's algorithm, and a hybrid ACO+PSO optimization for autonomous mobile robotics."
-              data-stack="Python • Algorithms • Simulation"
-            >
-              <h3>Path Planning for Indoor Delivery</h3>
-              <p>Hybrid metaheuristic optimization combining ACO and PSO, yielding 20% improvement in path efficiency.</p>
-              <div class="tags">
-                <span class="tag">Algorithms</span>
-                <span class="tag">Optimization</span>
-                <span class="tag">Robotics</span>
+          <div class="projects-grid">
+            <article class="project-card reveal">
+              <span class="project-badge">Production Agent</span>
+              <h3>Multi-Modal WhatsApp Agent with Tool Calling &amp; RAG</h3>
+              <p>Architected agentic WhatsApp automation systems leveraging LLM tool/function calling for automated email dispatch, image synthesis, and real-time data lookup. Developed enterprise RAG knowledge pipelines for banking policy retrieval with hallucination mitigation.</p>
+              <div class="project-tags">
+                <span class="tag">OpenAI</span>
+                <span class="tag">DeepSeek</span>
+                <span class="tag">RAG</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Proxmox</span>
               </div>
               <div class="project-links">
-                <a href="#" aria-label="Live demo">Live</a>
-                <a href="#" aria-label="Source code">Code</a>
+                <a href="#" aria-label="Source code">Code &#8599;</a>
+                <a href="#" aria-label="Live demo">Live Demo &#8599;</a>
               </div>
             </article>
 
-            <article class="card project reveal" role="button" tabindex="0"
-              data-title="Face Recognition & Emotion Detection"
-              data-desc="Real-time computer vision desktop application using InsightFace with a custom hybrid ResNet50 + LSTM neural architecture."
-              data-stack="PyTorch • InsightFace • Tkinter"
-            >
-              <h3>Face Recognition & Emotion Detection</h3>
-              <p>Real-time face recognition with emotion trend logging and multi-expression facial profile registration.</p>
-              <div class="tags">
-                <span class="tag">Computer Vision</span>
-                <span class="tag">Deep Learning</span>
+            <article class="project-card reveal">
+              <span class="project-badge">Robotics Optimization</span>
+              <h3>Autonomous Robot Path Planning System</h3>
+              <p>Final year project implementing Delaunay triangulation for 2D topological map modeling and Dijkstra's algorithm for global pathfinding. Designed a hybrid ACO+PSO metaheuristic optimization yielding 20% improvement in path efficiency and obstacle avoidance.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">ACO</span>
+                <span class="tag">PSO</span>
+                <span class="tag">Dijkstra</span>
+                <span class="tag">Simulation</span>
               </div>
               <div class="project-links">
-                <a href="#" aria-label="Live demo">Live</a>
-                <a href="#" aria-label="Source code">Code</a>
+                <a href="#" aria-label="Source code">Code &#8599;</a>
+                <a href="#" aria-label="Live demo">Live Demo &#8599;</a>
               </div>
             </article>
 
-            <article class="card project reveal" role="button" tabindex="0"
-              data-title="Developer Portfolio"
-              data-desc="A clean, accessible portfolio template focused on clarity and performance."
-              data-stack="HTML • CSS • JS"
-            >
+            <article class="project-card reveal">
+              <span class="project-badge">Computer Vision</span>
+              <h3>Facial Recognition &amp; Emotion Analysis Engine</h3>
+              <p>Real-time computer vision desktop application using InsightFace paired with a custom hybrid ResNet50+LSTM neural architecture. Features multi-expression facial profile registration and emotion trend logging via a Tkinter GUI.</p>
+              <div class="project-tags">
+                <span class="tag">PyTorch</span>
+                <span class="tag">InsightFace</span>
+                <span class="tag">ResNet50</span>
+                <span class="tag">LSTM</span>
+                <span class="tag">Tkinter</span>
+              </div>
+              <div class="project-links">
+                <a href="#" aria-label="Source code">Code &#8599;</a>
+                <a href="#" aria-label="Live demo">Live Demo &#8599;</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <span class="project-badge">Frontend</span>
               <h3>Developer Portfolio</h3>
-              <p>A lightweight, semantic portfolio template with dark/light theme and AI chatbot integration.</p>
-              <div class="tags">
-                <span class="tag">Frontend</span>
-                <span class="tag">Clean UI</span>
+              <p>Clean, accessible portfolio with dark/light theme, scroll-reveal animations, and an AI chatbot assistant backed by a Cloudflare Worker.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Cloudflare Workers</span>
               </div>
               <div class="project-links">
-                <a href="#" aria-label="Live demo">Live</a>
-                <a href="#" aria-label="Source code">Code</a>
+                <a href="#" aria-label="Source code">Code &#8599;</a>
+                <a href="#" aria-label="Live demo">Live Demo &#8599;</a>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="experience" class="section section--alt">
+      <!-- ==================== EXPERIENCE ==================== -->
+      <section id="experience" class="section">
         <div class="container">
           <div class="section-head">
-            <h2>Experience & Education</h2>
-            <p class="section-subtitle">My journey so far.</p>
+            <h2>Experience</h2>
+            <p class="section-subtitle">Professional background and education.</p>
           </div>
 
-          <ol class="timeline" aria-label="Experience and education timeline">
-            <li class="timeline-item reveal">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-card">
-                <h3>AI Developer & Researcher • Beyond Photography Academy</h3>
-                <p class="timeline-meta">Feb 2026 — Present</p>
-                <p>Architected multi-modal WhatsApp automation agents with LLM tool/function calling. Acting as Forward Deployed Engineer for enterprise clients including RHB Bank. Administered Proxmox VE and LXC infrastructure for 50+ students.</p>
+          <!-- Beyond Photography Academy -->
+          <div class="experience-group">
+            <div class="experience-company">
+              <h3>Beyond Photography Academy</h3>
+              <span class="role-type">Full-Time &amp; Internship</span>
+            </div>
+
+            <div class="experience-role">
+              <div class="role-header">
+                <h4>AI Developer &amp; Researcher <span class="role-type">Full-Time</span></h4>
+                <span class="role-meta">Feb 2026 — Present</span>
               </div>
-            </li>
-            <li class="timeline-item reveal">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-card">
-                <h3>AI Researcher & Developer Trainee • Beyond Photography Academy</h3>
-                <p class="timeline-meta">Aug 2025 — Feb 2026</p>
-                <p>Built AI-powered WhatsApp bot handling 30+ daily active users. Engineered full-stack dashboard reducing onboarding time by 60%. Established automated CI/CD with 99% uptime.</p>
+              <ul>
+                <li>Architected agentic WhatsApp automation systems utilizing LLM tool/function calling for automated email dispatch, image generation, and real-time data querying.</li>
+                <li>Developed enterprise RAG knowledge pipelines for banking policy retrieval bots, focusing on context precision and hallucination mitigation.</li>
+                <li>Acted as Forward Deployed Engineer (FDE) engaging directly with clients to gather requirements and implement customized production agent features.</li>
+                <li>Administered Proxmox VE hypervisors and LXC containers with Nginx reverse proxies for 50+ students in technical AI workshops.</li>
+              </ul>
+            </div>
+
+            <div class="experience-role">
+              <div class="role-header">
+                <h4>AI Developer Trainee <span class="role-type">Internship</span></h4>
+                <span class="role-meta">Aug 2025 — Feb 2026</span>
               </div>
-            </li>
-            <li class="timeline-item reveal">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-card">
-                <h3>Final Year Project • Path Planning for Indoor Delivery</h3>
-                <p class="timeline-meta">Oct 2024 — Jun 2025</p>
-                <p>Implemented Delaunay triangulation, Dijkstra's algorithm, and hybrid ACO+PSO optimization yielding 20% improvement in path efficiency.</p>
+              <ul>
+                <li>Built AI-powered WhatsApp bot with OpenAI/DeepSeek integration handling 30+ daily active users with low response latency.</li>
+                <li>Engineered full-stack management dashboard (Node.js, Bootstrap) cutting client onboarding time by 60%.</li>
+                <li>Established automated CI/CD deployment on Linux using PM2, systemd, and OTA updates, maintaining 99% production uptime.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="experience-group" style="margin-top: 1.5rem;">
+            <div class="experience-company">
+              <h3>Education</h3>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-header">
+                <h4>Bachelor of Computer Science (Artificial Intelligence)</h4>
+                <span class="edu-meta">Oct 2022 — Feb 2026 &bull; CGPA 3.34</span>
               </div>
-            </li>
-            <li class="timeline-item reveal">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-card">
-                <h3>Bachelor of Computer Science (AI) • Universiti Malaya</h3>
-                <p class="timeline-meta">Oct 2022 — Feb 2026 • CGPA 3.34</p>
-                <p>Relevant coursework: Machine Learning, Deep Learning, NLP, Autonomous Robots, Data Structures & Algorithms, Database Systems.</p>
+              <p>Universiti Malaya &mdash; Machine Learning, Deep Learning, NLP, Autonomous Robots, Data Structures &amp; Algorithms, Database Systems.</p>
+            </div>
+
+            <div class="edu-item">
+              <div class="edu-header">
+                <h4>Foundation in Physical Science</h4>
+                <span class="edu-meta">Oct 2021 — May 2022 &bull; CGPA 3.80</span>
               </div>
-            </li>
-            <li class="timeline-item reveal">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-card">
-                <h3>Foundation in Physical Science • Universiti Malaya</h3>
-                <p class="timeline-meta">Oct 2021 — May 2022 • CGPA 3.80</p>
-                <p>Advanced Mathematics, C Programming.</p>
-              </div>
-            </li>
-          </ol>
+              <p>Universiti Malaya &mdash; Advanced Mathematics, C Programming.</p>
+            </div>
+          </div>
         </div>
       </section>
 
+      <!-- ==================== AWARDS ==================== -->
       <section id="awards" class="section">
         <div class="container">
           <div class="section-head">
-            <h2>Honors & Awards</h2>
+            <h2>Honors &amp; Awards</h2>
             <p class="section-subtitle">Recognition and leadership.</p>
           </div>
 
-          <div class="grid-2">
-            <div class="card reveal">
+          <div class="awards-grid">
+            <div class="award-card reveal">
               <h3>Bronze Award — SASMO</h3>
-              <p>Singapore and Asian Schools Math Olympiad. Recognized for strong analytical and mathematical problem-solving ability.</p>
+              <p class="award-meta">Singapore and Asian Schools Math Olympiad</p>
+              <p>Recognized for strong analytical and mathematical problem-solving ability.</p>
             </div>
-            <div class="card reveal">
+            <div class="award-card reveal">
               <h3>Project Director — SUKMUM</h3>
-              <p class="timeline-meta">Nov 2023 — Dec 2023</p>
-              <p>Led and coordinated technical projects for Sukan Mahasiswa Universiti Malaya, Kinabalu Residential College.</p>
+              <p class="award-meta">Nov 2023 — Dec 2023 &bull; Kinabalu Residential College</p>
+              <p>Led and coordinated technical projects for Sukan Mahasiswa Universiti Malaya.</p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- ==================== CONTACT ==================== -->
       <section id="contact" class="section">
         <div class="container">
           <div class="section-head">
             <h2>Contact</h2>
-            <p class="section-subtitle">Let’s build something useful.</p>
+            <p class="section-subtitle">Let's connect.</p>
           </div>
 
-          <div class="grid-2">
-            <div class="card reveal">
+          <div class="contact-grid">
+            <div class="contact-links reveal">
               <h3>Links</h3>
               <ul class="link-list">
-                <li><a href="https://github.com/hasbilol" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/hafiz-aiman" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a></li>
-                <li><a href="mailto:hfz.aiman0307@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">hfz.aiman0307@gmail.com</a></li>
-                <li><a href="tel:+601137587224" target="_blank" rel="noopener noreferrer" aria-label="Phone">+6011-37587224</a></li>
+                <li><a href="https://github.com/hasbilol" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub &#8599;</a></li>
+                <li><a href="https://www.linkedin.com/in/hafiz-aiman" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn &#8599;</a></li>
+                <li><a href="mailto:hfz.aiman0307@gmail.com" aria-label="Email">hfz.aiman0307@gmail.com</a></li>
+                <li><a href="tel:+601137587224" aria-label="Phone">+6011-37587224</a></li>
               </ul>
             </div>
 
-            <form class="card form reveal" id="contact-form" novalidate>
-              <label>
-                Name
-                <input name="name" type="text" autocomplete="name" required />
-              </label>
-              <label>
-                Email
-                <input name="email" type="email" autocomplete="email" required />
-              </label>
-              <label>
-                Message
-                <textarea name="message" rows="4" required></textarea>
-              </label>
-              <button class="btn" type="submit">Send</button>
+            <form class="contact-form card reveal" id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" rows="3" placeholder="What's on your mind?" required></textarea>
+              </div>
+              <button class="btn btn--accent" type="submit">Send Message</button>
               <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
             </form>
           </div>
@@ -362,57 +369,66 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Hafiz Aiman. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Hafiz Aiman. All rights reserved.</p>
         <a class="to-top" href="#top">Back to top</a>
       </div>
     </footer>
 
+    <!-- Project Modal -->
     <div class="modal" id="project-modal" aria-hidden="true">
       <div class="modal__backdrop" data-modal-close></div>
       <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal__close" type="button" data-modal-close aria-label="Close dialog">×</button>
+        <button class="modal__close" type="button" data-modal-close aria-label="Close dialog">&times;</button>
         <h3 id="modal-title" class="modal__title">Project</h3>
         <p class="modal__desc" id="modal-desc"></p>
         <p class="modal__stack" id="modal-stack"></p>
         <div class="modal__actions">
-          <a class="btn" id="modal-live" href="#" target="_blank" rel="noopener">Live</a>
-          <a class="btn btn--ghost" id="modal-code" href="#" target="_blank" rel="noopener">Code</a>
+          <a class="btn btn--secondary" id="modal-live" href="#" target="_blank" rel="noopener">Live</a>
+          <a class="btn btn--secondary" id="modal-code" href="#" target="_blank" rel="noopener">Code</a>
         </div>
       </div>
     </div>
 
+    <!-- Back to Top -->
     <a href="#top" class="back-to-top" id="back-to-top" aria-label="Back to top">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </a>
 
+    <!-- Chatbot Button -->
     <button id="chatbot-button" class="chatbot-button" aria-label="Open chatbot" aria-expanded="false">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
       </svg>
     </button>
 
+    <!-- Chatbot Panel -->
     <div id="chatbot-panel" class="chatbot-panel" aria-hidden="true">
       <div id="chatbot-header" class="chatbot-header">
         <div class="chatbot-header__info">
           <h3 class="chatbot-header__title">Bo</h3>
-          <p class="chatbot-header__subtitle">Ask me anything about Hafiz!</p>
+          <p class="chatbot-header__subtitle">Ask me about Hafiz</p>
         </div>
-        <button id="chatbot-close" class="chatbot-close" aria-label="Close chatbot">×</button>
+        <button id="chatbot-close" class="chatbot-close" aria-label="Close chatbot">&times;</button>
       </div>
       <div id="chatbot-messages" class="chatbot-messages" role="log" aria-live="polite"></div>
+      <div class="chatbot-prompts" id="chatbot-prompts">
+        <button class="chatbot-prompt-chip" data-prompt="What is Hafiz's core tech stack?">Core Tech Stack</button>
+        <button class="chatbot-prompt-chip" data-prompt="What is Hafiz's experience with RAG and agents?">RAG & Agent Experience</button>
+        <button class="chatbot-prompt-chip" data-prompt="What is Hafiz's notice period and availability?">Availability</button>
+      </div>
       <div class="chatbot-input-container">
         <input
           id="chatbot-input"
           type="text"
           class="chatbot-input"
-          placeholder="Type your message..."
+          placeholder="Type a message..."
           aria-label="Chat message input"
           autocomplete="off"
         />
         <button id="chatbot-send" class="chatbot-send" aria-label="Send message">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="22" y1="2" x2="11" y2="13"></line>
             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
           </svg>
@@ -424,5 +440,3 @@
     <script src="assets/js/chatbot.js" defer></script>
   </body>
 </html>
-
-

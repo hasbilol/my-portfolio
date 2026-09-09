@@ -7,7 +7,6 @@
   const WORKER_URL = 'https://portfolio-chatbot-worker.hfz-aiman0307.workers.dev';
   let isOpen = false;
   let isTyping = false;
-  let messageHistory = [];
 
   const chatbotButton = $('#chatbot-button');
   const chatbotPanel = $('#chatbot-panel');
@@ -16,6 +15,7 @@
   const chatbotInput = $('#chatbot-input');
   const chatbotSend = $('#chatbot-send');
   const chatbotClose = $('#chatbot-close');
+  const chatbotPrompts = $('#chatbot-prompts');
 
   if (!chatbotButton || !chatbotPanel || !chatbotMessages || !chatbotInput || !chatbotSend) {
     return;
@@ -24,7 +24,7 @@
   const addMessage = (text, isUser = false) => {
     const messageEl = document.createElement('div');
     messageEl.className = `chatbot-message ${isUser ? 'chatbot-message--user' : 'chatbot-message--bot'}`;
-    
+
     const contentEl = document.createElement('div');
     contentEl.className = 'chatbot-message__content';
     contentEl.textContent = text;
@@ -33,11 +33,11 @@
     timeEl.className = 'chatbot-message__time';
     const now = new Date();
     timeEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    
+
     messageEl.appendChild(contentEl);
     messageEl.appendChild(timeEl);
     chatbotMessages.appendChild(messageEl);
-    
+
     scrollToBottom();
     return messageEl;
   };
@@ -46,19 +46,19 @@
     const typingEl = document.createElement('div');
     typingEl.className = 'chatbot-message chatbot-message--bot chatbot-message--typing';
     typingEl.id = 'typing-indicator';
-    
+
     const contentEl = document.createElement('div');
     contentEl.className = 'chatbot-message__content';
-    
+
     const dots = document.createElement('span');
     dots.className = 'typing-dots';
     dots.innerHTML = '<span></span><span></span><span></span>';
-    
+
     contentEl.appendChild(dots);
     typingEl.appendChild(contentEl);
     chatbotMessages.appendChild(typingEl);
     scrollToBottom();
-    
+
     return typingEl;
   };
 
@@ -73,13 +73,12 @@
     });
   };
 
-  const sendMessage = async () => {
-    const message = chatbotInput.value.trim();
+  const sendMessage = async (text) => {
+    const message = text || chatbotInput.value.trim();
     if (!message || isTyping) return;
 
     chatbotInput.value = '';
     addMessage(message, true);
-    messageHistory.push({ role: 'user', content: message });
 
     isTyping = true;
     chatbotSend.disabled = true;
@@ -101,17 +100,16 @@
 
       const data = await response.json();
       removeTypingIndicator();
-      
+
       if (data.response) {
         addMessage(data.response, false);
-        messageHistory.push({ role: 'assistant', content: data.response });
       } else {
         addMessage('Sorry, I encountered an error. Please try again.', false);
       }
     } catch (error) {
       console.error('Chatbot error:', error);
       removeTypingIndicator();
-      addMessage('Sorry, I\'m having trouble connecting. Please check your connection and try again.', false);
+      addMessage('Having trouble connecting. Please try again.', false);
     } finally {
       isTyping = false;
       chatbotSend.disabled = false;
@@ -126,9 +124,9 @@
     chatbotPanel.classList.add('is-open');
     chatbotButton.setAttribute('aria-expanded', 'true');
     chatbotInput.focus();
-    
+
     if (chatbotMessages.children.length === 0) {
-      addMessage('Hello! I\'m Bo I can help you learn about Hafiz, his skills, projects, and how to contact him. How can I help you?', false);
+      addMessage("Hi! I'm Bo. Ask me about Hafiz's skills, projects, experience, or availability.", false);
     }
   };
 
@@ -145,8 +143,7 @@
   });
 
   chatbotClose.addEventListener('click', closeChatbot);
-
-  chatbotSend.addEventListener('click', sendMessage);
+  chatbotSend.addEventListener('click', () => sendMessage());
 
   chatbotInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -159,17 +156,22 @@
     if (e.target === chatbotHeader || e.target.closest('#chatbot-close')) {
       return;
     }
-    if (isOpen) {
-      closeChatbot();
-    } else {
-      openChatbot();
-    }
+    if (isOpen) closeChatbot();
+    else openChatbot();
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isOpen) {
-      closeChatbot();
-    }
+    if (e.key === 'Escape' && isOpen) closeChatbot();
   });
-})();
 
+  // Quick prompt chips
+  if (chatbotPrompts) {
+    const chips = chatbotPrompts.querySelectorAll('.chatbot-prompt-chip');
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const prompt = chip.getAttribute('data-prompt');
+        if (prompt) sendMessage(prompt);
+      });
+    });
+  }
+})();

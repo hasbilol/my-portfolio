@@ -86,6 +86,12 @@ export default `# Portfolio Knowledge Base
 - LinkedIn: https://www.linkedin.com/in/hafiz-aiman
 - GitHub: https://github.com/hasbilol
 
+## Availability & Notice Period
+- Hafiz is currently open to full-time AI Developer, Backend Engineer, or Forward Deployed Engineer roles
+- He graduated in February 2026 and is actively looking for new opportunities
+- Available to start immediately or within a short notice period
+- Open to remote, hybrid, or on-site positions in Kuala Lumpur or internationally
+
 ## Additional Information
 - Strong interest in AI-powered automation systems and agentic architectures
 - Enjoys solving system-level problems and technical instruction

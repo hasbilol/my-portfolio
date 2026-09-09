@@ -187,11 +187,13 @@
     });
   }
 
-  // Contact form
+  // Contact form (EmailJS)
   const form = $("#contact-form");
   const note = $("#form-note");
 
   if (form && note) {
+    emailjs.init({ publicKey: "4yGcJWivKXgLVsATi" });
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const fd = new FormData(form);
@@ -204,8 +206,19 @@
         return;
       }
 
-      note.textContent = "Thanks! Your message is ready to be sent (demo only).";
-      form.reset();
+      note.textContent = "Sending...";
+
+      emailjs.send("service_wpgwxko", "template_p6lq5aj", {
+        name: name,
+        email: email,
+        message: message,
+      }).then(() => {
+        note.textContent = "Message sent! I'll get back to you soon.";
+        form.reset();
+      }).catch((err) => {
+        console.error("EmailJS error:", err);
+        note.textContent = "Failed to send. Please try again or email me directly.";
+      });
     });
   }
 

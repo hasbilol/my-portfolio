@@ -280,6 +280,7 @@ body.light-theme .theme-toggle__icon--sun {
 /* Hero */
 .hero {
   padding: 4.2rem 0 2.5rem;
+  scroll-margin-top: 0;
 }
 
 .hero-inner {
@@ -419,6 +420,7 @@ h1 {
 /* Sections */
 .section {
   padding: 3.2rem 0;
+  scroll-margin-top: 5rem;
 }
 
 .section--alt {

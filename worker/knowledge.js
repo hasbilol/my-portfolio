@@ -1,89 +1,95 @@
 // Portfolio Knowledge Base
-// Auto-filled based on real background
-// Used by the chatbot to answer questions about me
+// Updated based on Hafiz's actual background
+// Used by the chatbot to answer questions about him
 
 export default `# Portfolio Knowledge Base
 
 ## About Hafiz
-- Hafiz's name is Hafiz Aiman
-- Hafiz is a fresh graduate of AI / Computer Science–related student at Universiti Malaya now working full-time as an AI / full-stack developer with strong focus on backend systems, automation, and AI integration
-- Hafiz enjoys building real-world systems, not just demos
-- Hafiz values clean architecture, performance, and scalability
-- Hafiz prefers practical solutions over over-engineering
-- Hafiz is comfortable working independently and taking ownership of systems
+- Full name: Hafiz Aiman Bin Shamsul Bahari
+- AI Developer and Computer Science (AI) graduate from Universiti Malaya
+- Currently working as AI Developer & Researcher at Beyond Photography Academy
+- Specializes in LLM integrations, autonomous agent architectures, RAG, and Linux server virtualization
+- Experienced in end-to-end production deployment and Forward Deployed Engineer (FDE) capacity
+- Former SASMO Bronze medalist with strong mathematical and algorithmic problem-solving skills
+- Values clean architecture, performance, and practical engineering solutions
 
 ## Skills
-### Programming & Development
-- JavaScript (Node.js)
-- HTML, CSS (modern responsive layouts)
-- SQL (MSSQL)
-- Python (AI / scripting)
+### AI & LLM Systems
+- LLM APIs: OpenAI (GPT), DeepSeek, OpenRouter, Claude
+- Agentic Architectures: Autonomous AI Agents, Tool/Function Calling
+- Knowledge Retrieval: RAG, context engineering, hallucination mitigation
+- Local Inference: Ollama (self-hosted models)
+- Classical ML & CV: PyTorch, Scikit-learn, OpenCV, InsightFace, CNN, ResNet50, LSTM
 
-### Backend & Systems
-- Node.js + Express
-- REST API design
-- Authentication & session handling
-- Server-side automation
-- PM2 process management
-- Linux server administration (LXC, Proxmox, VPS)
+### Full-Stack Development
+- Backend: Python, Node.js, Express.js
+- Frontend: Bootstrap 5, EJS, HTML5, CSS3, Tkinter GUI
+- Databases: MySQL, Microsoft SQL Server, PostgreSQL
+- Client Interfacing: Requirement gathering, technical scoping, production deployment
 
-### AI & Automation
-- AI chatbot development
-- Retrieval-Augmented Generation (RAG)
-- Prompt engineering
-- Vector databases & embeddings
-- AI API integration (Groq, OpenAI-style APIs)
+### Infrastructure & DevOps
+- Virtualization: Proxmox VE, LXC Containers
+- Web Servers: Nginx (Reverse Proxy, SSL, URL routing)
+- Process Management: Linux/Ubuntu Server, PM2, systemd, OTA updates
+- Tools: SSH, Git, Cursor/AI-assisted development
 
-### Tools & Platforms
-- Git & GitHub
-- Cloudflare Pages & Workers
-- Docker / LXC containers
-- PHPMaker (enterprise CRUD systems)
-- Cursor / AI-assisted development
+### Languages
+- Malay (Native)
+- English (Full Professional Proficiency / CEFR C1)
+
+## Work Experience
+### AI Developer & Researcher — Beyond Photography Academy (Feb 2026 – Present)
+- Architected multi-modal WhatsApp automation agents with LLM tool/function calling (OpenAI, DeepSeek, OpenRouter)
+- Acted as Forward Deployed Engineer engaging directly with enterprise clients including RHB Bank
+- Researched and developed RAG knowledge pipelines for corporate clients
+- Evaluated on-premise LLM runtimes using Ollama for secure edge inference
+- Administered Proxmox VE and LXC infrastructure for 50+ students
+- Designed technical curricula and led hands-on AI training workshops
+
+### AI Researcher & Developer Trainee — Beyond Photography Academy (Aug 2025 – Feb 2026)
+- Built AI-powered WhatsApp automation bot handling 30+ daily active users
+- Engineered full-stack dashboard reducing onboarding time by 60%
+- Established automated CI/CD with PM2, systemd, and OTA updates maintaining 99% uptime
 
 ## Projects
-- **Mei AI WhatsApp Bot Platform**
-  - Multi-version WhatsApp AI bot system (Free, Business, Enterprise)
-  - Custom RAG pipelines, user personas, automation logic
-  - Payment gateway integration and subscription handling
-  - Deployed across multiple LXC containers with PM2
+### Path Planning for Indoor Delivery System (Final Year Project)
+- Delaunay triangulation for 2D topological map modeling
+- Dijkstra's algorithm for global pathfinding
+- Hybrid ACO + PSO optimization yielding 20% improvement in path efficiency
 
-- **AI Dashboard & Web Systems**
-  - Admin dashboards for managing bots, users, and subscriptions
-  - Secure login systems and session management
-  - Backend-heavy systems focused on reliability and scalability
+### Face Recognition & Emotion Detection System
+- Real-time computer vision using InsightFace
+- Custom hybrid ResNet50 + LSTM neural architecture
+- Tkinter desktop GUI with live video feed and emotion trend logging
 
-- **Final Year Project**
-  - Multi-robot path planning and optimization
-  - Delaunay triangulation, Dijkstra, ACO + PSO algorithms
-  - GUI-based simulation with visualization
+### Developer Portfolio
+- Clean, accessible portfolio with dark/light theme
+- AI chatbot integration using Cloudflare Workers
 
-- **Vision System Projects**
-  - Face recognition and emotion detection
-  - Object detection for smart robot systems
-  - Real-time webcam inference
+## Education
+### Bachelor of Computer Science (AI) — Universiti Malaya (Oct 2022 – Feb 2026)
+- CGPA: 3.34
+- Coursework: Machine Learning, Deep Learning, NLP, Autonomous Robots, Data Structures & Algorithms, Database Systems
 
-## Experience & Education
-- **Final Year Student**, Universiti Malaya (2022 – 2026)
-- **Internship / Industrial Training**
-  - Full-stack developer role
-  - Built production-level AI systems and dashboards
-  - Worked with real users and live servers
-- Experience handling large-scale user onboarding and system coordination
-- Experience leading and coordinating technical projects
+### Foundation in Physical Science — Universiti Malaya (Oct 2021 – May 2022)
+- CGPA: 3.80
+- Coursework: Advanced Mathematics, C Programming
+
+## Honors & Awards
+- Bronze Award — Singapore and Asian Schools Math Olympiad (SASMO)
+- Project Director — Sukan Mahasiswa Universiti Malaya (SUKMUM), Kinabalu Residential College (Nov 2023 – Dec 2023)
 
 ## Contact Information
 - Location: Kuala Lumpur, Malaysia
-- GitHub: https://github.com/hasbilol
-- LinkedIn: https://www.linkedin.com/in/hafiz-aiman/
 - Email: hfz.aiman0307@gmail.com
+- Phone: +6011-37587224
+- LinkedIn: https://www.linkedin.com/in/hafiz-aiman
+- GitHub: https://github.com/hasbilol
 
 ## Additional Information
-- Strong interest in AI-powered automation systems
-- Enjoy solving system-level problems
+- Strong interest in AI-powered automation systems and agentic architectures
+- Enjoys solving system-level problems and technical instruction
 - Comfortable explaining technical concepts clearly
-- Supporter of learning, improvement, and practical engineering
-- Hafiz also an athlete, he loves to play volleyball
-- Hafiz once played for the University of Malaya volleyball team
-- Hafiz also loves nature, he loves to go fishing, gardening with his father
+- Athlete: loves volleyball, once played for University of Malaya volleyball team
+- Loves nature: fishing and gardening with his father
 `;

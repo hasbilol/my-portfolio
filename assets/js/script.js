@@ -63,7 +63,7 @@
   }
 
   // Active link highlight based on scroll position
-  const sectionIds = ["about", "skills", "projects", "experience", "contact"];
+  const sectionIds = ["about", "skills", "projects", "experience", "awards", "contact"];
   const sections = sectionIds
     .map((id) => document.getElementById(id))
     .filter((el) => el);
@@ -161,7 +161,7 @@
 
   // Hero role rotator (typewriter-ish)
   const roleEl = $("#role-rotator");
-  const roles = ["frontend developer", "UI-focused builder", "problem solver", "web developer"];
+  const roles = ["AI Developer", "Forward Deployed Engineer", "Full-Stack Developer", "RAG Specialist"];
   let roleIdx = 0;
 
   const setRole = (text) => {

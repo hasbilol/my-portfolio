@@ -52,6 +52,15 @@ export default `# Portfolio Knowledge Base
 - Established automated CI/CD with PM2, systemd, and OTA updates maintaining 99% uptime
 
 ## Projects
+### PDF RAG Chatbot
+- Local, citation-aware RAG chatbot for 100–1000 page PDFs
+- Hybrid search (BM25 + vector) with reciprocal-rank fusion
+- Section-aware chunking with file/page/section citations
+- Local reranking, auto-OCR for scanned pages (RapidOCR)
+- Web UI with chat, corpus management, retrieval lab, and settings
+- Gemini free tier + Ollama fallback for LLM generation
+- Built with Python, FastAPI, LanceDB, sentence-transformers
+
 ### Path Planning for Indoor Delivery System (Final Year Project)
 - Delaunay triangulation for 2D topological map modeling
 - Dijkstra's algorithm for global pathfinding

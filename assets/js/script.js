@@ -277,6 +277,54 @@
       form.reset();
     });
   }
+
+  // Theme toggle
+  const themeToggle = $("#theme-toggle");
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light-theme");
+      const isLight = document.body.classList.contains("light-theme");
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+  }
+
+  // Back to top button
+  const backToTop = $("#back-to-top");
+  if (backToTop) {
+    const toggleBackToTop = () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add("is-visible");
+      } else {
+        backToTop.classList.remove("is-visible");
+      }
+    };
+    window.addEventListener("scroll", toggleBackToTop, { passive: true });
+    toggleBackToTop();
+  }
+
+  // Skill bar animation on scroll
+  const skillBars = $$(".skill-bar");
+  if (skillBars.length && "IntersectionObserver" in window) {
+    const skillIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const bar = entry.target;
+          const level = bar.getAttribute("data-level");
+          bar.style.setProperty("--skill-level", `${level}%`);
+          bar.classList.add("is-animated");
+          skillIO.unobserve(bar);
+        });
+      },
+      { rootMargin: "0px 0px -20% 0px", threshold: 0.2 }
+    );
+    skillBars.forEach((bar) => skillIO.observe(bar));
+  }
 })();
 
 

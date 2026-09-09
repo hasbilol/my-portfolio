@@ -34,6 +34,23 @@
           <a class="nav-link" href="#experience">Experience</a>
           <a class="nav-link" href="#contact">Contact</a>
         </nav>
+
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -60,7 +77,7 @@
 
           <div class="hero-card reveal" aria-label="Profile card">
             <div class="avatar" aria-hidden="true">
-              <span>HA</span>
+              <img src="assets/images/photo_2026-04-07_20-23-45.jpg" alt="Hafiz Aiman profile photo" class="avatar-img" />
             </div>
             <div class="hero-card__body">
               <p class="hero-card__title">Currently</p>
@@ -105,15 +122,66 @@
             <p class="section-subtitle">Tools and technologies I use daily.</p>
           </div>
 
-          <div class="chip-row reveal" role="list">
-            <span class="chip" role="listitem">Node.js</span>
-            <span class="chip" role="listitem">Express</span>
-            <span class="chip" role="listitem">JavaScript</span>
-            <span class="chip" role="listitem">SQL (MSSQL)</span>
-            <span class="chip" role="listitem">AI & RAG Systems</span>
-            <span class="chip" role="listitem">System Design</span>
-            <span class="chip" role="listitem">Docker / LXC</span>
-            <span class="chip" role="listitem">Problem Solving</span>
+          <div class="skills-grid reveal">
+            <div class="skill-category">
+              <h3 class="skill-category__title">Programming</h3>
+              <div class="skill-bar" data-level="90">
+                <div class="skill-bar__label"><span>JavaScript / Node.js</span><span class="skill-bar__pct">90%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+              <div class="skill-bar" data-level="80">
+                <div class="skill-bar__label"><span>Python</span><span class="skill-bar__pct">80%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+              <div class="skill-bar" data-level="75">
+                <div class="skill-bar__label"><span>SQL (MSSQL)</span><span class="skill-bar__pct">75%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+              <div class="skill-bar" data-level="85">
+                <div class="skill-bar__label"><span>HTML / CSS</span><span class="skill-bar__pct">85%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3 class="skill-category__title">Backend & Systems</h3>
+              <div class="skill-bar" data-level="90">
+                <div class="skill-bar__label"><span>Node.js + Express</span><span class="skill-bar__pct">90%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+              <div class="skill-bar" data-level="85">
+                <div class="skill-bar__label"><span>REST API Design</span><span class="skill-bar__pct">85%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+              <div class="skill-bar" data-level="80">
+                <div class="skill-bar__label"><span>Docker / LXC</span><span class="skill-bar__pct">80%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+              <div class="skill-bar" data-level="75">
+                <div class="skill-bar__label"><span>Linux / Proxmox</span><span class="skill-bar__pct">75%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3 class="skill-category__title">AI & Automation</h3>
+              <div class="skill-bar" data-level="85">
+                <div class="skill-bar__label"><span>AI Chatbot Development</span><span class="skill-bar__pct">85%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+              <div class="skill-bar" data-level="80">
+                <div class="skill-bar__label"><span>RAG Systems</span><span class="skill-bar__pct">80%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+              <div class="skill-bar" data-level="75">
+                <div class="skill-bar__label"><span>Prompt Engineering</span><span class="skill-bar__pct">75%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+              <div class="skill-bar" data-level="70">
+                <div class="skill-bar__label"><span>System Design</span><span class="skill-bar__pct">70%</span></div>
+                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -292,6 +360,12 @@
         </div>
       </div>
     </div>
+
+    <a href="#top" class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </a>
 
     <button id="chatbot-button" class="chatbot-button" aria-label="Open chatbot" aria-expanded="false">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

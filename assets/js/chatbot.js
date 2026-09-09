@@ -28,8 +28,14 @@
     const contentEl = document.createElement('div');
     contentEl.className = 'chatbot-message__content';
     contentEl.textContent = text;
+
+    const timeEl = document.createElement('span');
+    timeEl.className = 'chatbot-message__time';
+    const now = new Date();
+    timeEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     
     messageEl.appendChild(contentEl);
+    messageEl.appendChild(timeEl);
     chatbotMessages.appendChild(messageEl);
     
     scrollToBottom();

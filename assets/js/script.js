@@ -68,6 +68,9 @@
     .map((id) => document.getElementById(id))
     .filter((el) => el);
 
+  let isNavClickScrolling = false;
+  let navClickTimer = null;
+
   const setActiveLink = (id) => {
     navLinks.forEach((a) => {
       const href = a.getAttribute("href") || "";
@@ -76,7 +79,7 @@
     });
   };
 
-  // Immediate highlight on click (before scroll observer kicks in)
+  // Immediate highlight on click + suppress scroll-based updates during animation
   if (navLinks.length) {
     navLinks.forEach((a) => {
       a.addEventListener("click", () => {
@@ -84,6 +87,13 @@
         if (!href.startsWith("#")) return;
         const targetId = href.slice(1);
         if (targetId) setActiveLink(targetId);
+
+        // Block scroll observer from overriding during smooth scroll
+        isNavClickScrolling = true;
+        clearTimeout(navClickTimer);
+        navClickTimer = setTimeout(() => {
+          isNavClickScrolling = false;
+        }, 1200);
       });
     });
   }
@@ -110,10 +120,11 @@
   // Lightweight scroll handler (rAF throttled)
   let ticking = false;
   const onScroll = () => {
-    if (ticking) return;
+    if (ticking || isNavClickScrolling) return;
     ticking = true;
     window.requestAnimationFrame(() => {
       ticking = false;
+      if (isNavClickScrolling) return;
       const id = computeActiveSection();
       if (id) setActiveLink(id);
     });
@@ -127,6 +138,7 @@
   if ("IntersectionObserver" in window && sections.length) {
     const io = new IntersectionObserver(
       (entries) => {
+        if (isNavClickScrolling) return;
         const anyVisible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];

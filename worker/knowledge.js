@@ -9,7 +9,7 @@ export default `# Portfolio Knowledge Base
 - AI Developer and Computer Science (AI) graduate from Universiti Malaya
 - Currently working as AI Developer & Researcher at Beyond Photography Academy
 - Specializes in LLM integrations, autonomous agent architectures, RAG, and Linux server virtualization
-- Experienced in end-to-end production deployment and Forward Deployed Engineer (FDE) capacity
+- Experienced in end-to-end production deployment and client-facing technical scoping
 - Former SASMO Bronze medalist with strong mathematical and algorithmic problem-solving skills
 - Values clean architecture, performance, and practical engineering solutions
 
@@ -40,7 +40,7 @@ export default `# Portfolio Knowledge Base
 ## Work Experience
 ### AI Developer & Researcher — Beyond Photography Academy (Feb 2026 – Present)
 - Architected multi-modal WhatsApp automation agents with LLM tool/function calling (OpenAI, DeepSeek, OpenRouter)
-- Acted as Forward Deployed Engineer engaging directly with enterprise clients including RHB Bank
+- Acted in a Forward Deployed Engineer capacity, engaging directly with enterprise clients including RHB Bank
 - Researched and developed RAG knowledge pipelines for corporate clients
 - Evaluated on-premise LLM runtimes using Ollama for secure edge inference
 - Administered Proxmox VE and LXC infrastructure for 50+ students

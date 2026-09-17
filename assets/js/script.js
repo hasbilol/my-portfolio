@@ -24,13 +24,16 @@
   };
 
   if (toggle && nav) {
-    toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
       const isOpen = nav.classList.contains("is-open");
       if (isOpen) closeNav();
       else openNav();
     });
 
     navLinks.forEach((a) => a.addEventListener("click", closeNav));
+
+    nav.addEventListener("click", (e) => e.stopPropagation());
 
     document.addEventListener("click", (e) => {
       const target = e.target;

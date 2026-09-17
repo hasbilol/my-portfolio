@@ -86,6 +86,7 @@ export default `# Portfolio Knowledge Base
 
 ## Honors & Awards
 - Bronze Award — Singapore and Asian Schools Math Olympiad (SASMO)
+- Distinction — DOKA (Depth of Knowledge Assessment)
 - Project Director — Sukan Mahasiswa Universiti Malaya (SUKMUM), Kinabalu Residential College (Nov 2023 – Dec 2023)
 
 ## Contact Information

@@ -86,7 +86,7 @@ export default `# Portfolio Knowledge Base
 
 ## Honors & Awards
 - Bronze Award — Singapore and Asian Schools Math Olympiad (SASMO)
-- Distinction — DOKA (Depth of Knowledge Assessment)
+- Distinction — DOKA (Depth of Knowledge Assessment), an international mathematical problem-solving competition by SMO Education Group that assesses Higher Order Thinking Skills (HOTS) and IQ
 - Project Director — Sukan Mahasiswa Universiti Malaya (SUKMUM), Kinabalu Residential College (Nov 2023 – Dec 2023)
 
 ## Contact Information

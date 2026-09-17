@@ -6,45 +6,17 @@
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Mobile nav toggle
+  // Mobile nav toggle (CSS checkbox-based)
   const nav = $("#site-nav");
-  const toggle = $(".nav-toggle");
+  const navCheck = $("#nav-check");
   const navLinks = $$("#site-nav a");
 
   const closeNav = () => {
-    if (!nav || !toggle) return;
-    nav.classList.remove("is-open");
-    toggle.setAttribute("aria-expanded", "false");
+    if (navCheck) navCheck.checked = false;
   };
 
-  const openNav = () => {
-    if (!nav || !toggle) return;
-    nav.classList.add("is-open");
-    toggle.setAttribute("aria-expanded", "true");
-  };
-
-  if (toggle && nav) {
-    toggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = nav.classList.contains("is-open");
-      if (isOpen) closeNav();
-      else openNav();
-    });
-
+  if (nav && navLinks.length) {
     navLinks.forEach((a) => a.addEventListener("click", closeNav));
-
-    nav.addEventListener("click", (e) => e.stopPropagation());
-
-    document.addEventListener("click", (e) => {
-      const target = e.target;
-      if (!(target instanceof Element)) return;
-      if (nav.contains(target) || toggle.contains(target)) return;
-      closeNav();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeNav();
-    });
   }
 
   // Active link highlight

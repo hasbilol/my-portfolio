@@ -1,7 +1,6 @@
 import streamlit as st
 import os
 import base64
-import re
 
 st.set_page_config(
     page_title="Hafiz Aiman — AI Developer",
@@ -14,7 +13,7 @@ st.markdown("""
     <style>
         #MainMenu, footer, header, [data-testid="stToolbar"] {visibility: hidden;}
         .block-container {padding: 0; margin: 0; max-width: 100%;}
-        iframe {border: none;}
+        iframe {border: none; overflow: visible !important;}
     </style>
 """, unsafe_allow_html=True)
 
@@ -54,7 +53,10 @@ if os.path.exists(img_path):
         f'src="data:image/jpeg;base64,{b64}"'
     )
 
-# Remove EmailJS CDN since we'll inline the init
-# Keep the script tag for the SDK
+# Fix: ensure nav dropdown is not clipped by iframe overflow
+html = html.replace(
+    '<body>',
+    '<body><style>.site-nav.is-open{overflow:visible !important;} .site-header{overflow:visible !important;} html,body{overflow-x:hidden !important;}</style>'
+)
 
-st.components.v1.html(html, height=900, scrolling=True)
+st.components.v1.html(html, height=800, scrolling=True)

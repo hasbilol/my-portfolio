@@ -59,4 +59,4 @@ html = html.replace(
     '<body><style>.site-nav.is-open{overflow:visible !important;} .site-header{overflow:visible !important;} html,body{overflow-x:hidden !important;}</style>'
 )
 
-st.components.v1.html(html, height=800, scrolling=True)
+st.iframe(html, height=800)

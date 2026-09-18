@@ -6,16 +6,29 @@
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // Mobile nav toggle (CSS checkbox-based)
+  // Mobile nav toggle (CSS checkbox + JS fallback for iframe environments)
   const nav = $("#site-nav");
   const navCheck = $("#nav-check");
+  const navToggle = $(".nav-toggle");
   const navLinks = $$("#site-nav a");
 
   const closeNav = () => {
     if (navCheck) navCheck.checked = false;
+    if (nav) nav.classList.remove("is-open");
   };
 
-  if (nav && navLinks.length) {
+  const toggleNav = () => {
+    const isOpen = navCheck ? navCheck.checked : nav.classList.contains("is-open");
+    if (isOpen) closeNav();
+    else {
+      if (navCheck) navCheck.checked = true;
+      if (nav) nav.classList.add("is-open");
+    }
+  };
+
+  if (navToggle) navToggle.addEventListener("click", (e) => { e.preventDefault(); toggleNav(); });
+
+  if (nav) {
     navLinks.forEach((a) => a.addEventListener("click", closeNav));
   }
 

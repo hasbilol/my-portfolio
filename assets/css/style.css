@@ -1399,7 +1399,8 @@ body.light-theme .tag {
     transition: opacity 120ms ease, transform 120ms ease;
   }
 
-  .nav-check:checked ~ .site-nav {
+  .nav-check:checked ~ .site-nav,
+  .site-nav.is-open {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;

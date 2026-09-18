@@ -240,14 +240,15 @@ body.light-theme .theme-toggle__icon--sun { display: none; }
   align-items: start;
 }
 
-/* Status pill */
+/* Hero avatar */
 .hero-avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 14px;
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
   object-fit: cover;
   border: 1px solid var(--surface-border);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  display: block;
 }
 
 .status-pill {

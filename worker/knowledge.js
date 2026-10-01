@@ -60,6 +60,13 @@ export default `# Portfolio Knowledge Base
 - Auto-generates professional dispute emails to vendors via SMTP
 - Built with Python, Streamlit, Pydantic v2, SQLite, ReportLab
 
+### Daily Tech Pulse
+- Automated AI tech-news digest delivered via email every morning at 8 AM
+- n8n workflow that scans top tech RSS feeds (Hacker News, ArXiv cs.AI, TechCrunch AI)
+- Gemini curates and summarizes the top stories into a mobile-friendly HTML briefing
+- Runs on Dockerized n8n on AWS EC2 free tier — total cost $0/day
+- Resilient design: feed failure tolerance, LLM retry with RSS fallback, never skips an email
+
 ### PDF RAG Chatbot
 - Local, citation-aware RAG chatbot for 100–1000 page PDFs
 - Hybrid search (BM25 + vector) with reciprocal-rank fusion

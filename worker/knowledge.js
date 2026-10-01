@@ -52,6 +52,14 @@ export default `# Portfolio Knowledge Base
 - Established automated CI/CD with PM2, systemd, and OTA updates maintaining 99% uptime
 
 ## Projects
+### Procure Agent
+- Intelligent Document Processing (IDP) & 3-way reconciliation agent for enterprise procurement
+- Extracts invoice data from PDFs using pdfplumber + Google Gemini 1.5 Flash (free tier)
+- Fuzzy 3-way matching against purchase orders using RapidFuzz
+- Flags price discrepancies, quantity overages, and unordered items
+- Auto-generates professional dispute emails to vendors via SMTP
+- Built with Python, Streamlit, Pydantic v2, SQLite, ReportLab
+
 ### PDF RAG Chatbot
 - Local, citation-aware RAG chatbot for 100–1000 page PDFs
 - Hybrid search (BM25 + vector) with reciprocal-rank fusion

@@ -52,6 +52,14 @@ export default `# Portfolio Knowledge Base
 - Established automated CI/CD with PM2, systemd, and OTA updates maintaining 99% uptime
 
 ## Projects
+### Resume Tailor Agent
+- Self-correcting LangGraph agent that tailors resumes to target job descriptions
+- Gap analysis first: extracts JD must-haves, keywords, evidence, gaps, and ATS risks
+- Structured ATS scoring via Pydantic validator, refines until score ≥ 80/100 (max 3 iterations)
+- Never fabricates employers, dates, metrics, or skills — truthful rewriting only
+- Live Streamlit UI with execution logs, comparison tabs, and Markdown export
+- Free-tier hardened with exponential backoff, quota fail-safe, and JSON fallback
+
 ### Procure Agent
 - Intelligent Document Processing (IDP) & 3-way reconciliation agent for enterprise procurement
 - Extracts invoice data from PDFs using pdfplumber + Google Gemini 1.5 Flash (free tier)

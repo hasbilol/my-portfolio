@@ -16,6 +16,9 @@
   const chatbotSend = $('#chatbot-send');
   const chatbotClose = $('#chatbot-close');
   const chatbotPrompts = $('#chatbot-prompts');
+  const chatbotTeaser = $('#chatbot-teaser');
+  const chatbotTeaserClose = $('.chatbot-teaser__close');
+  const chatbotRing = $('.chatbot-button__ring');
 
   if (!chatbotButton || !chatbotPanel || !chatbotMessages || !chatbotInput || !chatbotSend) {
     return;
@@ -172,6 +175,53 @@
         const prompt = chip.getAttribute('data-prompt');
         if (prompt) sendMessage(prompt);
       });
+    });
+  }
+
+  // Teaser bubble + pulsing ring
+  if (chatbotTeaser && chatbotRing) {
+    let teaserDismissed = false;
+
+    const hideTeaser = () => {
+      if (teaserDismissed) return;
+      teaserDismissed = true;
+      chatbotTeaser.classList.remove('is-visible');
+      chatbotTeaser.setAttribute('aria-hidden', 'true');
+      chatbotRing.classList.remove('is-visible');
+    };
+
+    const showTeaser = () => {
+      if (teaserDismissed || isOpen) return;
+      chatbotTeaser.classList.add('is-visible');
+      chatbotTeaser.setAttribute('aria-hidden', 'false');
+      chatbotRing.classList.add('is-visible');
+    };
+
+    // Show after 3 seconds
+    setTimeout(showTeaser, 3000);
+
+    // Auto-hide after 10 more seconds
+    setTimeout(hideTeaser, 13000);
+
+    // Dismiss on close button
+    if (chatbotTeaserClose) {
+      chatbotTeaserClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hideTeaser();
+      });
+    }
+
+    // Dismiss on scroll
+    window.addEventListener('scroll', hideTeaser, { once: true, passive: true });
+
+    // Dismiss when chat is opened
+    chatbotButton.addEventListener('click', hideTeaser);
+
+    // Clicking the teaser opens the chat
+    chatbotTeaser.addEventListener('click', (e) => {
+      if (e.target === chatbotTeaserClose || chatbotTeaserClose.contains(e.target)) return;
+      hideTeaser();
+      openChatbot();
     });
   }
 })();

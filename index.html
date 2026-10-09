@@ -34,6 +34,15 @@
           <a class="nav-link" href="#contact">Contact</a>
         </nav>
 
+        <button id="cmdk-open" class="cmdk-open" type="button" aria-label="Open command menu" aria-haspopup="dialog">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span class="cmdk-open__label">Search</span>
+          <kbd id="cmdk-mod" class="cmdk-open__kbd">Ctrl K</kbd>
+        </button>
+
         <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">
           <svg class="theme-toggle__icon theme-toggle__icon--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -81,26 +90,22 @@
             </div>
           </div>
 
-          <div class="spec-card reveal" aria-label="System specification card">
+          <div class="spec-card reveal" aria-label="Terminal">
             <div class="spec-card__header">
               <div class="spec-card__dots">
                 <span></span><span></span><span></span>
               </div>
-              system_spec.json
+              hafiz@portfolio: ~
             </div>
-            <div class="spec-card__body">
-              <span class="bracket">{</span><br />
-              &nbsp;&nbsp;<span class="key">"status"</span>: <span class="str">"Ready for deployment"</span>,<br />
-              &nbsp;&nbsp;<span class="key">"role"</span>: <span class="str">"AI Developer & Researcher"</span>,<br />
-              &nbsp;&nbsp;<span class="key">"focus"</span>: [<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="arr-item">"Agentic AI"</span>,<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="arr-item">"Tool Calling"</span>,<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="arr-item">"RAG"</span>,<br />
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="arr-item">"Proxmox"</span><br />
-              &nbsp;&nbsp;],<br />
-              &nbsp;&nbsp;<span class="key">"education"</span>: <span class="str">"B.CompSc (AI), Universiti Malaya"</span>,<br />
-              &nbsp;&nbsp;<span class="key">"accolade"</span>: <span class="str">"SASMO Math Olympiad Bronze Medalist"</span><br />
-              <span class="bracket">}</span>
+            <div class="spec-card__body terminal" id="terminal">
+              <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">whoami</span></div>
+              <div class="term-line term-out">Hafiz Aiman — AI Developer &amp; Researcher</div>
+              <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">cat stack.txt</span></div>
+              <div class="term-line term-out">Agentic AI · RAG · Tool Calling · Proxmox</div>
+              <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">cat education.txt</span></div>
+              <div class="term-line term-out">B.CompSc (AI), Universiti Malaya · CGPA 3.34</div>
+              <div class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">./availability.sh</span></div>
+              <div class="term-line term-out term-success">status: Open to full-time roles ✓</div>
             </div>
           </div>
         </div>
@@ -493,6 +498,28 @@
             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
           </svg>
         </button>
+      </div>
+    </div>
+
+    <!-- Command Palette -->
+    <div id="cmdk" class="cmdk" aria-hidden="true">
+      <div class="cmdk__backdrop" id="cmdk-backdrop"></div>
+      <div class="cmdk__dialog" role="dialog" aria-modal="true" aria-label="Command menu">
+        <div class="cmdk__input-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input id="cmdk-input" class="cmdk__input" type="text" placeholder="Type a command or search..." autocomplete="off" spellcheck="false" aria-label="Search commands" />
+          <kbd class="cmdk__kbd">esc</kbd>
+        </div>
+        <ul id="cmdk-list" class="cmdk__list" role="listbox" aria-label="Commands"></ul>
+        <div class="cmdk__empty" id="cmdk-empty" hidden>No results found</div>
+        <div class="cmdk__footer">
+          <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+          <span><kbd>↵</kbd> select</span>
+          <span><kbd>esc</kbd> close</span>
+        </div>
       </div>
     </div>
 

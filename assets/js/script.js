@@ -238,4 +238,227 @@
     window.addEventListener("scroll", toggleBackToTop, { passive: true });
     toggleBackToTop();
   }
+
+  // Terminal typing animation
+  const terminal = $("#terminal");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (terminal && !prefersReducedMotion) {
+    const script = [
+      { type: "cmd", text: "whoami" },
+      { type: "out", text: "Hafiz Aiman — AI Developer & Researcher" },
+      { type: "cmd", text: "cat stack.txt" },
+      { type: "out", text: "Agentic AI · RAG · Tool Calling · Proxmox" },
+      { type: "cmd", text: "cat education.txt" },
+      { type: "out", text: "B.CompSc (AI), Universiti Malaya · CGPA 3.34" },
+      { type: "cmd", text: "./availability.sh" },
+      { type: "out", text: "status: Open to full-time roles ✓", success: true },
+    ];
+
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+    const runTerminal = async () => {
+      terminal.innerHTML = "";
+      const cursor = document.createElement("span");
+      cursor.className = "term-cursor";
+      cursor.setAttribute("aria-hidden", "true");
+
+      for (const line of script) {
+        const lineEl = document.createElement("div");
+        lineEl.className = "term-line";
+
+        if (line.type === "cmd") {
+          const prompt = document.createElement("span");
+          prompt.className = "term-prompt";
+          prompt.textContent = "$";
+          const cmd = document.createElement("span");
+          cmd.className = "term-cmd";
+          lineEl.append(prompt, document.createTextNode(" "), cmd, cursor);
+          terminal.appendChild(lineEl);
+          for (const ch of line.text) {
+            cmd.textContent += ch;
+            await sleep(35 + Math.random() * 55);
+          }
+          await sleep(350);
+        } else {
+          lineEl.className = "term-line term-out" + (line.success ? " term-success" : "");
+          lineEl.textContent = line.text;
+          terminal.appendChild(lineEl);
+          await sleep(500);
+        }
+      }
+
+      const lastLine = document.createElement("div");
+      lastLine.className = "term-line";
+      const prompt = document.createElement("span");
+      prompt.className = "term-prompt";
+      prompt.textContent = "$";
+      lastLine.append(prompt, document.createTextNode(" "), cursor);
+      terminal.appendChild(lastLine);
+    };
+
+    runTerminal();
+  }
+
+  // Command palette (Ctrl/Cmd + K)
+  const cmdk = $("#cmdk");
+  const cmdkInput = $("#cmdk-input");
+  const cmdkList = $("#cmdk-list");
+  const cmdkOpenBtn = $("#cmdk-open");
+  const cmdkBackdrop = $("#cmdk-backdrop");
+  const cmdkEmpty = $("#cmdk-empty");
+  const cmdkMod = $("#cmdk-mod");
+
+  if (cmdkMod && /Mac|iPhone|iPad/.test(navigator.platform)) {
+    cmdkMod.textContent = "⌘K";
+  }
+
+  const icons = {
+    navigate: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+    action: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+    link: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>',
+  };
+
+  const commands = [
+    { group: "Navigate", icon: "navigate", label: "About", hint: "#top", keywords: "home hero intro", action: () => document.getElementById("top").scrollIntoView({ behavior: "smooth" }) },
+    { group: "Navigate", icon: "navigate", label: "Skills", hint: "#skills", keywords: "technologies stack tools", action: () => document.getElementById("skills").scrollIntoView({ behavior: "smooth" }) },
+    { group: "Navigate", icon: "navigate", label: "Projects", hint: "#projects", keywords: "work portfolio", action: () => document.getElementById("projects").scrollIntoView({ behavior: "smooth" }) },
+    { group: "Navigate", icon: "navigate", label: "Experience", hint: "#experience", keywords: "work education timeline", action: () => document.getElementById("experience").scrollIntoView({ behavior: "smooth" }) },
+    { group: "Navigate", icon: "navigate", label: "Awards", hint: "#awards", keywords: "achievements competition", action: () => document.getElementById("awards").scrollIntoView({ behavior: "smooth" }) },
+    { group: "Navigate", icon: "navigate", label: "Contact", hint: "#contact", keywords: "email form phone", action: () => document.getElementById("contact").scrollIntoView({ behavior: "smooth" }) },
+    { group: "Actions", icon: "action", label: "Toggle theme", hint: "dark / light", keywords: "dark light mode appearance", action: () => { themeToggle && themeToggle.click(); } },
+    { group: "Actions", icon: "action", label: "Chat with Bo", hint: "AI assistant", keywords: "chatbot assistant bo ask", action: () => { const b = $("#chatbot-button"); if (b) b.click(); } },
+    { group: "Actions", icon: "action", label: "Copy email", hint: "hfz.aiman0307@gmail.com", keywords: "copy mail address", action: () => { if (navigator.clipboard) navigator.clipboard.writeText("hfz.aiman0307@gmail.com"); } },
+    { group: "Links", icon: "link", label: "GitHub profile", hint: "github.com/hasbilol", keywords: "github code repos", action: () => window.open("https://github.com/hasbilol", "_blank", "noopener") },
+    { group: "Links", icon: "link", label: "LinkedIn profile", hint: "linkedin.com/in/hafiz-aiman", keywords: "linkedin social", action: () => window.open("https://www.linkedin.com/in/hafiz-aiman", "_blank", "noopener") },
+  ];
+
+  const fuzzyMatch = (query, text) => {
+    const q = query.toLowerCase();
+    const t = text.toLowerCase();
+    const idx = t.indexOf(q);
+    if (idx !== -1) return { matched: true, score: idx };
+    let qi = 0;
+    for (let i = 0; i < t.length && qi < q.length; i++) {
+      if (t[i] === q[qi]) qi++;
+    }
+    return { matched: qi === q.length, score: 999 };
+  };
+
+  let filtered = [];
+  let activeIndex = 0;
+
+  const renderList = () => {
+    if (!cmdkList) return;
+    cmdkList.innerHTML = "";
+    if (filtered.length === 0) {
+      if (cmdkEmpty) cmdkEmpty.hidden = false;
+      return;
+    }
+    if (cmdkEmpty) cmdkEmpty.hidden = true;
+
+    let lastGroup = "";
+    filtered.forEach((cmd, i) => {
+      if (cmd.group !== lastGroup) {
+        lastGroup = cmd.group;
+        const groupEl = document.createElement("li");
+        groupEl.className = "cmdk__group-label";
+        groupEl.textContent = cmd.group;
+        cmdkList.appendChild(groupEl);
+      }
+      const li = document.createElement("li");
+      li.className = "cmdk__item" + (i === activeIndex ? " is-active" : "");
+      li.setAttribute("role", "option");
+      li.innerHTML =
+        '<span class="cmdk__item-icon">' + icons[cmd.icon] + "</span>" +
+        '<span class="cmdk__item-label"></span>' +
+        '<span class="cmdk__item-hint"></span>';
+      li.querySelector(".cmdk__item-label").textContent = cmd.label;
+      li.querySelector(".cmdk__item-hint").textContent = cmd.hint;
+      li.addEventListener("click", () => runCommand(i));
+      li.addEventListener("mouseenter", () => {
+        activeIndex = i;
+        cmdkList.querySelectorAll(".cmdk__item").forEach((el, j) => el.classList.toggle("is-active", j === i));
+      });
+      cmdkList.appendChild(li);
+    });
+  };
+
+  const filterCommands = (query) => {
+    const trimmed = query.trim();
+    if (!trimmed) {
+      filtered = commands.slice();
+    } else {
+      filtered = commands
+        .map((cmd) => {
+          const inLabel = fuzzyMatch(trimmed, cmd.label);
+          const inKeywords = fuzzyMatch(trimmed, cmd.keywords);
+          const best = Math.min(inLabel.score, inKeywords.score);
+          return inLabel.matched || inKeywords.matched ? { cmd, best } : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.best - b.best)
+        .map((x) => x.cmd);
+    }
+    activeIndex = 0;
+    renderList();
+  };
+
+  const openCmdk = () => {
+    if (!cmdk) return;
+    cmdk.classList.add("is-open");
+    cmdk.setAttribute("aria-hidden", "false");
+    if (cmdkInput) {
+      cmdkInput.value = "";
+      cmdkInput.focus();
+    }
+    filterCommands("");
+  };
+
+  const closeCmdk = () => {
+    if (!cmdk) return;
+    cmdk.classList.remove("is-open");
+    cmdk.setAttribute("aria-hidden", "true");
+  };
+
+  const runCommand = (i) => {
+    const cmd = filtered[i];
+    if (!cmd) return;
+    closeCmdk();
+    setTimeout(cmd.action, 100);
+  };
+
+  if (cmdk) {
+    if (cmdkOpenBtn) cmdkOpenBtn.addEventListener("click", openCmdk);
+    if (cmdkBackdrop) cmdkBackdrop.addEventListener("click", closeCmdk);
+    if (cmdkInput) cmdkInput.addEventListener("input", () => filterCommands(cmdkInput.value));
+
+    document.addEventListener("keydown", (e) => {
+      const isOpen = cmdk.classList.contains("is-open");
+
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        isOpen ? closeCmdk() : openCmdk();
+        return;
+      }
+
+      if (!isOpen) return;
+
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeCmdk();
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        activeIndex = (activeIndex + 1) % Math.max(filtered.length, 1);
+        renderList();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        activeIndex = (activeIndex - 1 + filtered.length) % Math.max(filtered.length, 1);
+        renderList();
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        runCommand(activeIndex);
+      }
+    });
+  }
 })();

@@ -177,6 +177,27 @@ body.light-theme .site-header {
   background: var(--surface);
 }
 
+/* Command menu entry (mobile nav) */
+.nav-cmdk {
+  display: none;
+  background: none;
+  border: none;
+  font-family: var(--sans);
+  cursor: pointer;
+  width: 100%;
+}
+
+.nav-cmdk__kbd {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-dim);
+  margin-left: auto;
+}
+
 /* Nav toggle (mobile) */
 .nav-check {
   display: none;
@@ -1529,8 +1550,20 @@ body.light-theme .tag {
 }
 
 @media (max-width: 760px) {
+  .header-inner {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
   .nav-toggle {
     display: inline-block;
+    margin-left: auto;
+  }
+
+  .nav-cmdk {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .cmdk-open {

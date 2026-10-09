@@ -250,7 +250,7 @@
       { type: "cmd", text: "cat stack.txt" },
       { type: "out", text: "Agentic AI · RAG · Tool Calling · Proxmox" },
       { type: "cmd", text: "cat education.txt" },
-      { type: "out", text: "B.CompSc (AI), Universiti Malaya · CGPA 3.34" },
+      { type: "out", text: "B.CompSc (AI), Universiti Malaya" },
       { type: "cmd", text: "./availability.sh" },
       { type: "out", text: "status: Open to full-time roles ✓", success: true },
     ];
@@ -311,6 +311,9 @@
 
   if (cmdkMod && /Mac|iPhone|iPad/.test(navigator.platform)) {
     cmdkMod.textContent = "⌘K";
+  } else {
+    const mobileMod = $(".nav-cmdk__mod");
+    if (mobileMod) mobileMod.textContent = "Ctrl K";
   }
 
   const icons = {
@@ -432,6 +435,18 @@
     if (cmdkOpenBtn) cmdkOpenBtn.addEventListener("click", openCmdk);
     if (cmdkBackdrop) cmdkBackdrop.addEventListener("click", closeCmdk);
     if (cmdkInput) cmdkInput.addEventListener("input", () => filterCommands(cmdkInput.value));
+
+    // Mobile: open from nav dropdown, close dropdown first
+    const cmdkOpenMobile = $("#cmdk-open-mobile");
+    if (cmdkOpenMobile) {
+      cmdkOpenMobile.addEventListener("click", () => {
+        const navCheck = $("#nav-check");
+        if (navCheck) navCheck.checked = false;
+        const nav = $("#site-nav");
+        if (nav) nav.classList.remove("is-open");
+        openCmdk();
+      });
+    }
 
     document.addEventListener("keydown", (e) => {
       const isOpen = cmdk.classList.contains("is-open");

@@ -100,7 +100,7 @@ export default `# Portfolio Knowledge Base
 
 ## Education
 ### Bachelor of Computer Science (AI) — Universiti Malaya (Oct 2022 – Feb 2026)
-- CGPA: 3.34
+- CGPA: 3.40
 - Coursework: Machine Learning, Deep Learning, NLP, Autonomous Robots, Data Structures & Algorithms, Database Systems
 
 ### Foundation in Physical Science — Universiti Malaya (Oct 2021 – May 2022)
